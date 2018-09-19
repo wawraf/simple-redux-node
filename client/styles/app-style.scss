@@ -1,0 +1,19 @@
+$myColor: lightgreen;
+$myColor2: indianred;
+$myColor3: #373fff;
+
+#myId {
+  border: 2px solid $myColor2;
+  background-color: $myColor;
+  margin: 20px;
+  padding: 10px;
+}
+
+h1 {
+    font-weight: 700;
+    color: red;
+}
+
+.main {
+  font-family: "Benton Sans",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",helvetica,arial,sans-serif;
+}
