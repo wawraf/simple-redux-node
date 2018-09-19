@@ -1,0 +1,67 @@
+{
+  "name": "simple-redux-node",
+  "author": "Rafał Wawrowski",
+  "version": "0.0.1",
+  "description": "A full stack web app based on redux and node",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack && babel-node --presets @babel/env server.js",
+    "build": "webpack --watch",
+    "test": "NODE_ENV=test mocha --require @babel/polyfill --require @babel/register --exit"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "bcrypt": "^3.0.0",
+    "helmet": "^3.13.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "redux": "^4.0.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "mongoose": "^5.2.15",
+    "mongoose-unique-validator": "^2.0.1",
+    "connect-mongo": "^2.0.1",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "passport-local": "^1.0.0",
+    "express-session": "^1.15.6"
+  },
+  "devDependencies": {
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0",
+    "morgan": "^1.9.1",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "sass-loader": "^7.1.0",
+    "node-sass": "^4.9.3",
+    "mini-css-extract-plugin": "^0.4.2",
+    "babel-loader": "^8.0.2",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "mocha": "^5.2.0",
+    "chai": "^4.1.2",
+    "chai-http": "^4.2.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "portfinder": "^1.0.17",
+    "dotenv": "^6.0.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "freecodecamp"
+  ]
+}
