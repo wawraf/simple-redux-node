@@ -1,4 +1,5 @@
 import { LOGIN, LOGOUT } from '../actionTypes'
+import axios from 'axios'
 
 // User authentication
 const login = () => (
@@ -9,7 +10,14 @@ const logout = () => (
   {type: LOGOUT, payload: false}
 )
 
-module.exports = {
+// const login = () => (dispatch) => {
+//     axios
+//     .post('/auth/github')
+//     .then(res => dispatch(_login()))
+//     .catch(err => {console.log(err)})
+//   }
+
+export { 
   login, 
   logout
 }

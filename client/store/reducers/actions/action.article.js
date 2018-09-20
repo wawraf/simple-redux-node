@@ -8,7 +8,7 @@ const getArticle = (article) => (
   {type: GET_ARTICLE, payload: article}
 )
 
-module.exports = {
+export {
   getAllArticles,
   getArticle
 }

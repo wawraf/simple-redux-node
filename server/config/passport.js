@@ -1,19 +1,18 @@
-const passport = require('passport')
 //const localStrategy = require('passport-local').Strategy
 const githubStrategy = require('passport-github').Strategy
 
 const { User } = require('../models')
 
-module.exports = () => {
+module.exports = (passport) => {
   
   passport.serializeUser((user, done) => {
-    console.log(`___SERIALIZE${user}+++${user}`);
-    done(null, user.id)
+    console.log(`___SERIALIZE ${user}+++${user}`);
+    done(null, user._id)
   })
   
   passport.deserializeUser((id, done) => {
-    console.log(`____DESERIALIZE${id}+++${id}`);
-    User.findOne(id, (err, user) => {
+    console.log(`___DESERIALIZE ${id}+++${id}`);
+    User.findById(id, (err, user) => {
       done(null, user)
     })
   })
@@ -25,8 +24,12 @@ module.exports = () => {
       callback: process.env.GITHUB_CALLBACK_URL
     },
     (accessToken, refreshToken, profile, done) => {
-      User.findOneAndUpdate({ 'github.id': profile.id }, 
-                            { 'github.name': profile.displayName || 'Buddy',  'github.id': profile.id }, 
+      const search = { 'github.id': profile.id }
+      
+      const update = { 'github.username': profile.displayName || 'Buddy',  'github.id': profile.id }
+      
+      User.findOneAndUpdate(search, 
+                            update, 
                             { upsert: true, new: true }, 
                             (err, user) => {
         if (err) return done(err, user)

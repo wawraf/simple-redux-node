@@ -9,7 +9,7 @@ import MongoStore from 'connect-mongo'
 // Import modules
 import routes from '../routes'
 import db from '../config/database'
-//import '../config/passport'
+require('./passport')(passport)
 
 const MongoConnection = MongoStore(session)
 
