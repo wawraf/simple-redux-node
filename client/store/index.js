@@ -1,7 +1,8 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 import reducers from './reducers'
 
-const store = createStore(reducers, window.STATE_FROM_SERVER)
+const store = createStore(reducers, applyMiddleware(thunk))
 
 console.log('New store:')
 console.log(store.getState())

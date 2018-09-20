@@ -1,11 +1,10 @@
-import * as Type from '/actionTypes'
-
 // User authentication
-import * as User from './action.user'
+const User = require('./action.user')
 
 //Article handling
-
+const Articles = require('./action.article')
 
 module.exports = {
-  ...User
+  ...User,
+  ...Articles
 }

@@ -41,11 +41,11 @@ module.exports = (router, passport) => {
 //   })
 
   router.get('/auth/github', 
-             isLoggedOut, 
+             // isLoggedOut, 
              passport.authenticate('github'))
 
-  router.get('/auth/gihub/callback', 
-             isLoggedOut,
+  router.get('/auth/github/callback', 
+             // isLoggedOut,
              passport.authenticate('github', { successRedirect: '/articles', failureRedirect: '/', failureFlash: true})
             )
 

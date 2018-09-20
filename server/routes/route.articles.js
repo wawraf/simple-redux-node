@@ -27,7 +27,7 @@ module.exports = (router) => {
     })
     .catch(err => next(err))
   })
-  
+    
   router.get('/articles', isLogged, (req, res, next) => {
     Articles.find()
     .then(articles => {
