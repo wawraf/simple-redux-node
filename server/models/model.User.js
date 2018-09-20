@@ -17,7 +17,7 @@ const userSchema = new Schema({
 
 userSchema.plugin(uniqueValidator)
 
-userSchema.methods.generateHash = (password) => {
+userSchema.methods.generateHash = function (password) {
   return bcrypt.hashSync(password, 14)
 }
 
@@ -25,6 +25,4 @@ userSchema.methods.passwordValid = function(password) {
   return bcrypt.compareSync(password, this.local.password)
 }
 
-const User = mongoose.model('Users',  userSchema)
-
-export default User
+const User = module.exports = mongoose.model('Users',  userSchema)

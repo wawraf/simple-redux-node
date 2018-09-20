@@ -47,18 +47,18 @@ export default (app) => {
   // Middleware for handling routes and errors
   app.use('/', routes);
   
-  app.use((req, res, next) => {
-    const err = new Error('Not found');
-    err.status = 404;
-    next(err);
-  });
+  // app.use((req, res, next) => {
+  //   console.log('ERROR!!!')
+  //   const err = new Error('Not found');
+  //   err.status = 404;
+  //   next(err);
+  // });
   
   app.use((err, req, res, next) => {
+    console.log('Last error handler')
+    console.log(err)
     res.status(err.status || 500).json({
-      error: {
-        message: err.message,
-      },
-    });
-    next(err);
+        message: err.message
+      })
   });
 };

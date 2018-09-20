@@ -3,16 +3,14 @@ import passport from 'passport'
 
 const router = express.Router()
 
-router.get('/hello', (req, res) => {
-  console.log('something is calling!')
-  res.status(200).json({info: 'hello'})
+/* Articles handling */
+const Articles = require('./route.articles')(router)
+
+/* Authentication handling */
+const Auth = require('./route.user')(router, passport)
+
+router.get('*', (req, res, next) => {
+  next(new Error('New Error!!!!'))
 })
-
-
-/* Polls handling */
-//const Polls = require('./polls')(router)
-
-/* Authentication handling*/
-//const Auth = require('./auth')(router, passport)
 
 export default router
