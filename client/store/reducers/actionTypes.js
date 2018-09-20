@@ -1,0 +1,11 @@
+const GET_ALL_ARTICLES = 'GET_ALL_ARTICLES'
+const GET_ARTICLE = 'GET_ARTICLE'
+const LOGIN = 'LOGIN'
+const LOGOUT = 'LOGOUT'
+
+module.exports = {
+  GET_ALL_ARTICLES,
+  GET_ARTICLE,
+  LOGIN,
+  LOGOUT
+}

@@ -1,6 +1,5 @@
 const React = require('react');
 const UnorderedList = require('./UnorderedList');
-require('../styles/HelloWorld');
 
 const dependenciesArray = [
   'express - middleware for the node server',

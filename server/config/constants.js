@@ -27,5 +27,5 @@ function envConfig(env) {
 
 export default {
   ...defaultConfig,
-  ...envConfig(process.env.NODE_ENV),
+  ...envConfig(process.env.NODE_ENV)
 };

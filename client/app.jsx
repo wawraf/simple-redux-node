@@ -1,8 +1,17 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const style = require('./styles/app-style');
+const style = require('./styles/app');
+import { Provider } from 'react-redux'
+import store from './store'
+import registerServiceWorker from './registerServiceWorker'
 
 /* Import Components */
-const HelloWorld = require('./components/HelloWorld');
+const App = require('./components/App');
 
-ReactDOM.render(<div id='myId' className='some'><HelloWorld/></div>, document.getElementById('main'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>, 
+  document.getElementById('main'));
+
+//registerServiceWorker()

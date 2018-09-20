@@ -2,7 +2,7 @@ const passport = require('passport')
 //const localStrategy = require('passport-local').Strategy
 const githubStrategy = require('passport-github').Strategy
 
-import { User } from '../models'
+const { User } = require('../models')
 
 module.exports = () => {
   

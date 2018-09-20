@@ -2,7 +2,7 @@ $myColor: lightgreen;
 $myColor2: indianred;
 $myColor3: #373fff;
 
-#myId {
+.main {
   border: 2px solid $myColor2;
   background-color: $myColor;
   margin: 20px;
@@ -14,6 +14,10 @@ h1 {
     color: red;
 }
 
-.main {
+body {
   font-family: "Benton Sans",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",helvetica,arial,sans-serif;
+}
+
+p {
+  color: darkred;
 }
